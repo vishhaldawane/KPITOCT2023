@@ -67,9 +67,24 @@ public class BankAccountTest {
 
 	}
 }
-//Developer -> Tester = Deployment -> Production
-class Cashier
+
+class Person
 {
+	
+}
+
+class CashFlow
+{
+	
+}
+
+//Developer -> Tester = Deployment -> Production
+class Cashier extends Person //isA
+{
+	
+	CashFlow cashFlow = new CashFlow(); //hasA
+	
+						//usesA
 	void dispenseCash(BankAccount x, double y) {
 		System.out.println("the cashier is dispensing cash for "+x+ " how much cash ? "+y);
 		x.withdraw(y);
