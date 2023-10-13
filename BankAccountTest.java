@@ -30,9 +30,65 @@ public class BankAccountTest {
 		bankAccObj2.showBankAccount();
 		bankAccObj3.showBankAccount();
 
+		//rajesh    raja 
+		BankAccount bankAccObj4 = bankAccObj1; //this is done by main method
 		
+		System.out.println("-------4th obj created---------");
+	
+		System.out.println("bankAccObj1 : "+bankAccObj1);
+		System.out.println("bankAccObj2 : "+bankAccObj2);
+		System.out.println("bankAccObj3 : "+bankAccObj3);
+		System.out.println("bankAccObj4 : "+bankAccObj4);
+			
+		
+		bankAccObj4.showBankAccount();
+		
+		bankAccObj4.withdraw(7000);
+		
+		bankAccObj1.showBankAccount();
+		bankAccObj4.showBankAccount();
+		
+		bankAccObj1.deposit(20000);
+
+		bankAccObj1.showBankAccount();
+		bankAccObj4.showBankAccount();
+
+		
+		Cashier cashierObj = new Cashier();
+		cashierObj.dispenseCash(bankAccObj1, 3000);
+		
+		bankAccObj1.showBankAccount();
+		System.out.println("============");
+		
+		cashierObj.transferFunds(bankAccObj1, bankAccObj2, 23000);
+		
+		bankAccObj1.showBankAccount();
+		bankAccObj2.showBankAccount();
+
 	}
 }
+//Developer -> Tester = Deployment -> Production
+class Cashier
+{
+	void dispenseCash(BankAccount x, double y) {
+		System.out.println("the cashier is dispensing cash for "+x+ " how much cash ? "+y);
+		x.withdraw(y);
+		//x.withdraw(y);
+		//x.withdraw(y);
+		
+		//x.accountBalance=x.accountBalance-y;
+		//x.accountHolderName="jacky";
+		//x.accountNumber=420;
+	}
+	void transferFunds(BankAccount  ref1, BankAccount ref2, double amountToTransfer)
+	{
+		System.out.println("Transferring funds from "+ref1+ " to "+ref2);
+		ref1.withdraw(amountToTransfer);
+		ref2.deposit(amountToTransfer);
+	}
+}
+
+// https://github.com/vishhaldawane/KPITOCT2023
 class BankAccount {
 	
 	private int accountNumber;
