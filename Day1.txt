@@ -1,0 +1,331 @@
+
+
+
+
+		Java Programming Language
+				- with Vishhal
+
+
+
+			Java Technologies
+				|
+		-----------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|		|		|
+		Standard	Enterprise	Micro [ mobile ]
+		CORE JAVA	|	
+		|		|
+Language fundamentals	--------------------
+OOPS concepts		|		|
+Packages		WEB		Enterprise Java Beans/component/class
+Exception handling	|http 			|
+Multithreading		Servlets	---------------------------------
+Generics		JSP		|		|[pk]		|
+Collections				Session		Entity		Message
+File Handling			server	|		|		|
+JDBC				|	----------	--------	-----
+|				client	|	|	 |     |	|   |
+Adv Java			     Stateless Statefull BMP  CMP	SMS Mail
+|
+Socket Programming
+RMI
+			written by Java developer = hard work 
+			bean managed persistence
+				CRUD	|
+					storing the java object on the DB as a row
+
+			Employee empObj1 = new Employee();
+			Passenger passObj1 = new Passenger();
+			Ticket ticketObj1 = new Ticket();
+			Ticket ticketObj2 = new Ticket();
+			Ticket ticketObj3 = new Ticket();
+			Ticket ticketObj4 = new Ticket();
+
+			auto-written by a framework like hibernate/jpa
+			Container managed persistence			
+
+
+
+A java program
+----------------
+.java file
+
+Name of the .java file and the name of the public class must be the same
+and u cannot have two public classes in a same source code
+
+SavingsAccount.java
+---------------------
+public class SavingsAccount
+{
+}
+
+-------------------------
+Bank.java
+class Savings
+{
+}
+class Current { }
+class Fixed { }
+----------------------
+
+
+javac Bank.java
+	|
+	Bank.class???? no 
+	|
+	Savings.class
+	Current.class
+	Fixed.class
+
+
+
+
+
+
+class System
+{
+        public static PrintStream out = new PrintStream();
+
+}
+
+
+
+
+Association
+------------------
+
+
+	infrastructuaral	functional/operational
+	|	|		|		|
+	isA	hasA		usesA		producesA
+	|	 |
+aggregation composition
+
+
+	class Machine
+	{
+	}
+	class WashingMachine extends Machine //isA
+	{
+		WashingTub washTub = new WashingTub(); //hasA
+		Panel panelObj = new Panel(); //hasA
+
+		producesA	    usesA		usesA		usesA			usesA
+		|			|		|		|			|
+		Laundry       wash(Cloth clothObj[], Water waterObj, Electricity eleObj, WashingPowder washPowObj) {
+
+			Laundry laundryObj = new Laundry();
+			laundryObj.setClothCalc(clothObj.length*50);
+			laundryObj.setElectricityCalc(30*eleObj.getUnitConsumed());
+			laundryObj.setWaterCalc(waterObj.getSize() * 0.3);
+			laundryObj.setWashingPowderCalc(washPowObj.getSize()*3);
+			return laundryObj;
+		}
+
+	}
+
+
+Thoughtrons
+|
+thoughts = faster than light = invisible = non-linear
+
+
+Formula of Creation
+-----------------------
+
+
+	LEFT				RIGHT
+	1				2
+	think	+ feel		=	action	+ result
+	|
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A
+|
+B
+|
+C
+|
+D
+
+class A 
+{
+}
+
+class B extends A
+{
+}
+
+
+
+
+
+	class DryingArea
+	{
+		WashingMachine washMachineObj = new WashingMachine();//hasA
+
+	}
+
+	
+
+
+
+
+
+Doctor
+|
+Surgeon
+
+
+
+
+Drum
+|isA
+WashingDrum
+
+
+
+Tub
+|isA
+WashingTub
+
+
+
+
+
+
+
+class PrintStream
+{
+        void println() {
+        }   
+}
+
+class Jungle
+{
+        public static Tiger tig = new Tiger();
+}
+
+class Tiger
+{
+        void jump() {
+        }   
+}
+
+Jungle.tig.jump()
+
+
+
+initial heap size
+and max heap size
+
+java -Xms50m -Xmx200m Bank.java
+
+			
+
+
+class Machine
+{
+}
+
+	Class			vs		Object
+	|					|
+blueprint of an object			instance of a class
+
+design of a house			the actual house(es)
+
+logical					physical
+
+simple text in a file			but it is a structure in the RAM
+					with functionalities
+
+class SavingsAccount			SavingsAccount savObj1 = new SavingsAccount();
+{					SavingsAccount savObj2 = new SavingsAccount();
+	data = acno,name,bal
+	+
+	functions = withdraw(){}
+		deposit(){}
+		showAccount(){}
+		ctor
+}
+
+
+Naming Convention
+
+
+
+	ClassName	DriverManager, WashingMachine, WashingPowder
+	variableName	rollNumber, socialSecurityNumber, passportNumber
+	methodName	setLookAndFeel(), transferFunds(), changeSocialSecurityNumber()
+	CONSTANT	PI, MAX, MIN, MIN_PRIORITY, SPEED_OF_LIGHT
+	packages	java.lang, java.awt.event, com.kpit.projects
+
+
+	BankAccount bankAccObj1 = new BankAccount(101,"Jack",25000.0f);
+	BankAccount bankAccObj2 = new BankAccount(102,"Jane",27000.0f);
+	BankAccount bankAccObj3 = new BankAccount(103,"Jill",29000.0f);
+	|		|	   |		|
+	classname	reference  Allocator   the constructor
+			to an
+			object
+
+
+
+STACK			HEAP
+-----------------------------------
+				DATA AREA
+
+		accountNumber, accountHolderName, accountBalance
+		------------------------------------------------
+		|		|		|		|
+		--------------------------------------------------
+  +------------>100
+  |
+ 100 <--value of this ref			METHOD AREA
+bankAccObj1
+					BankAccount(...) { }
+					showBankAccount(){}
+					deposit() { }
+					withdraw() { }
+
+
+
+		 accountNumber, accountHolderName, accountBalance
+                ------------------------------------------------
+                |               |               |               |   
+                --------------------------------------------------
+  +------------>200
+  |
+ 200 <--value of this ref                     
+bankAccObj2
+
+
+ 		accountNumber, accountHolderName, accountBalance
+                ------------------------------------------------
+                |               |               |               |
+                --------------------------------------------------
+  +------------>300
+  |
+ 300 <--value of this ref                      
+bankAccObj3
+
+
