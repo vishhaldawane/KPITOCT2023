@@ -445,3 +445,233 @@ class Actor extends Person
 				capture()
 				{
 				}
+
+
+
+
+OOPs concepts
+--------------
+1. Abstraction
+	- it is the "WHAT IS?" part of an object
+
+		WHAT IS AN ATM?
+
+			dispense cash
+
+			a farmer can withdraw the cash from the ATM
+			without knowing the internal functioning of an ATM
+			
+		hiding of data and concerned functions
+
+			a. data abstraction
+			b. procedural abstraction
+			c. class abstraction
+		
+2. Encapsulation
+
+	- it is the "HOW IS IT?" part of an object
+
+			how the cash is dispensed ?
+			ATM Engineer is responsible for this
+
+	- binding of data and concerned functions 
+	
+			a. data encapsulation
+				- private double totalCash
+
+				- public void dispenseCash(float amtDispensed) {
+						totalCash-=amtDispensed;
+				  } 
+
+	
+
+
+	String 
+	
+3. Polymorphism
+
+		ability of a business entity to have multiple forms
+
+				Doctor
+				| diagnose() { ENT }
+			-----------------
+			|
+			Surgeon
+			| diagnose() { ENT + CT scan }
+		-------------------
+		|
+	HeartSurgeon
+		| diagnose(){  ENT + CT Scan + ECG }
+
+
+		Person
+		| react() { shouting }
+	Photographer 
+	|react() { instruction for pose }
+Cinematographer
+| react() { instruction for movements }
+
+
+		a. class extension
+		b. function overloading
+			class Phone
+			{
+				void dial() { }
+				void dial(byte numberToDial) { }
+				void dial(String name) { }
+				void dial(byte num1, byte num2) { }
+				void dial(byte num1, String name) { }
+				void dial(String name, byte num1) { }
+
+			}
+		c. function overriding
+
+	
+		d. operator overloading
+
+		System.out.println(10+20+" what is this "+(10+20))
+		System.out.println(30+" what is this "+1020)
+		System.out.println("30 what is this 1010")
+
+
+
+4. Inheritance
+
+
+
+
+
+5. Object communication
+
+	invoking method of another object
+
+
+
+
+
+
+--------------------
+
+
+	A Constructor
+
+
+	- a function which has same name as of the enclosing class
+
+
+class Milk
+{
+
+} <- the above class has a default ctor - it does NOTHING
+
+
+class Milk
+{
+	Milk() {
+	} <--- this is not a default constructor !!! why
+			because it is visible to human eye
+		- it can be used to initialize the state of the object
+
+	Milk(int q) {
+	} <-- parameterized ctor to set the quantity
+	
+}
+
+
+
+
+
+
+Packages
+---------
+
+		to organize concerned classes in a folder
+
+
+		packages 		=		folder
+		|					|
+		java					operating system
+		|					|
+		java.lang				c:\...\java\lang
+		java.awt.event				c:\...\java\lang\event
+
+
+				java <-- main
+				|
+		----------------------------------------------
+		|	|	|	|	|	|			|
+		lang	util	io	net	awt	sql <-- subpackages	awt
+		|	|	|	|	 |  	|			|
+		System	List  File	Socket	Button	Driver			event
+		Thread  Set   Input-		Label	DriverManager		|
+		Exception 	Stream			ResultSet		ActionEvent
+		
+	
+
+
+	import java.awt.*;
+	import java.awt.event.*;
+
+				src
+				|
+			----------------------------------
+				|			|
+				jungle <-- main		App.java <--default package for this 
+				|			  main(){ }	is src
+		------------------------------------
+		|	|	|	|
+		cave	river	tree	house <-- sub packages
+		|	|	|	|
+		Tiger	Frog	Parrot	FarmHouse
+		Lion	Fish	Sparrow
+		Bear		Monkey
+
+
+
+
+				bank
+				|
+		----------------------------------------------------
+		|		|		|		|
+		account		transfer	statement	services <-- modules
+		|							|
+	TigerComponent.ts [ controller]				Account.services.ts
+	TigerComponent.html [view]
+	TigerComponent.css [ style]
+
+
+					
+
+	1.                 [ accessible within the same folder ]
+
+	2. private	[ can only be referred by the same class in which they are created]
+
+	3. protected [ can be referred if the non-child is in hte same package,
+			eg. Bear can access tiger.protectedC;
+			but cannot access protectedC without Tiger's reference]
+
+			WhiteTiger from cave can access protectedC with ref or 
+			without reference
+
+			BengalTiger from river canNOT access protectedC with ref
+			but can access protectedC without ref being as child of
+			Tiger
+
+
+	4. public	 [ accessible to the whole world ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

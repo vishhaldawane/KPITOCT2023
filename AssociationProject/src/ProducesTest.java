@@ -130,12 +130,12 @@ class Curd
 		this.quantity = quantity;
 	}
 	
-	ButterMilk blend(Water water) {
-		
-		if(water.getQuantity())
-		ButterMilk butterMilk = new ButterMilk() 
-		
-	}
+//	ButterMilk blend(Water water) {
+//		
+//		if(water.getQuantity())
+//		ButterMilk butterMilk = new ButterMilk() 
+//		
+//	}
 	
 	Butter churn() {
 		System.out.println("Churning the "+this.quantity+"kg Curd");

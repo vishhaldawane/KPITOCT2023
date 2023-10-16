@@ -1,9 +1,11 @@
+	Ask And It is Given - Esther Hicks and Jerry Hicks
 
 
+Fiza	 Rutuja		Nivedita    Shivaranjani Ujjwal	   Shlok
+Gauri	 Sakshi		Hrutika	    Sakshi2	 Om	   Onkar
+Ekta	 Avani		Bhagyashree Rucha	 Chiranjib Gaurav  Tarik    Harshwardhan
+Chitra	 Nandini	Vaishnavi   Gareema	 Srusti	   Brunda  Sohan    Abhishek
+Ruchitha Priyanka	Isha        Jidnyesha	 Rija	   Urvashi Hrushant Abhijeet
+	|			|			|		 |
+	Col1			Col2			Col3		Col4						
 
-Fiza	 Rutuja		Nivedita    Shivaranjani
-Gauri	 Sakshi		Hrutika	    Sakshi2		Ujjwal	 Shlok
-Ekta	 Avani		Bhagyashree Rucha		Om	 Onkar
-Chitra	 Nandini	Vaishnavi Gareema		Chiranjib Gaurav	Tarik	 Harshwardhan
-Ruchitha Priyanka	Jidnyesha			Srusti	Brunda		Sohan	 Abhishek
-|			|				Rija	Urvashi		Hrushant Abhijeet
