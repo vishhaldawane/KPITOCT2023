@@ -1,0 +1,61 @@
+
+public class ProducesTest {
+	public static void main(String[] args) {
+		
+		Milk milk = new Milk("GirCow","OffWhite",10); 
+		milk.printMilk();
+		
+		milk.setQuantity(milk.getQuantity()+5);
+		
+		milk.printMilk();
+		
+		
+	}
+}
+
+class Milk // extends Object  = super class in java 
+{
+	private String type;
+	private String color;
+	private int quantity;
+	
+	public Milk(String type, String color, int quantity) {
+		super();
+		this.type = type;
+		this.color = color;
+		this.quantity = quantity;
+	}
+	
+	void printMilk() {
+		System.out.println("Type     : "+type);
+		System.out.println("Color    : "+color);
+		System.out.println("Quantity : "+quantity);
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	
+	
+}
