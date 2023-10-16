@@ -1,0 +1,21 @@
+
+public class BankAccountTest {
+	public static void main(String[] args)
+	{
+
+		System.out.println("hello");
+
+	}
+
+}
+
+class BankAccount {
+	
+	private int accountNumber;
+	private String accountHolderName;
+	private double accountBalance;
+	
+	
+	
+	
+}

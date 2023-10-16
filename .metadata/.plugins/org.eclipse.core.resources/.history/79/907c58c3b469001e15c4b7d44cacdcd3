@@ -1,0 +1,34 @@
+
+public class BankAccountTest {
+	public static void main(String[] args)
+	{
+
+		System.out.println("hello");
+
+	}
+
+}
+
+class BankAccount {
+	
+	private int accountNumber;
+	private String accountHolderName;
+	private double accountBalance;
+	
+	public BankAccount(int accountNumber, String accountHolderName, double accountBalance) {
+		super();
+		this.accountNumber = accountNumber;
+		this.accountHolderName = accountHolderName;
+		this.accountBalance = accountBalance;
+	}
+	
+	void showBankAccount() {
+		System.out.println("ACCOUNT NUMBER  : "+accountNumber);
+		System.out.println("ACCOUNT HOLDER  : "+accountHolderName);
+		System.out.println("ACCOUNT BALANCE : "+accountBalance);
+		System.out.println("---------------------");
+	}
+	
+	
+	
+}

@@ -1,0 +1,36 @@
+
+public class AssociationTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("Begin the association....");
+		
+		WashingMachine washingMachineObj = new WashingMachine();
+		
+		washingMachineObj.wash();
+	}
+
+}
+
+class Machine
+{
+	
+}
+class WashingMachine extends Machine //isA
+{
+	private WashingTub washTubObj = new WashingTub(); //hasA
+
+	void wash() {
+		System.out.println("Washing the cloths...");
+	}
+}
+
+class Tub
+{
+	
+}
+class WashingTub extends Tub //isA
+{
+	
+}
