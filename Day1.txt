@@ -329,3 +329,119 @@ bankAccObj2
 bankAccObj3
 
 
+------------------
+
+
+
+
+1. function without argument AND without return
+
+
+	void clearScreen()
+	{
+		no variables passed,
+		no value to return
+	}
+
+
+2. function with argument BUT without return
+
+	void gotoLocation(float longitude, float lattitude)
+	{
+		use these two variables passed inside this function
+		and no return.
+	}
+
+3. function with arguments AND with return value
+
+	float calculateAverage(int a, int b, int c)
+	{
+		utilize these a,b and c
+		float avg = (a+b+c)/3.0f;
+		MUST return a float value (MANDATE)
+		return avg;
+	}
+
+4. functin without arguments BUT with return value
+
+	char calculateGrade()
+	{
+		no values passed here...
+		but still process/calculate a grade and return it
+
+		MUST return a char value (MANDATE)
+		return 'A';
+	}
+
+
+
+
+1. Build a powerfull character
+
+//STATIONARY 
+class Camera
+{
+	int maximumPhotosToStore=1000; //hasA
+	int currentPhotoCount; //hasA
+	Lens lens = new Lens(); //hasA
+
+	void click() {
+		if(currentPhotoCount<maximumPhotosToStore) {	
+			currentPhotoCount++;
+		}
+		else {
+			System.out.println("MEmory is full");
+		}	
+	}
+	
+	void deletePic() {
+		currentPhotoCount--;		
+	}
+	void zoomIn() { }
+	void zoomOut() { }
+}
+
+class Person
+{
+	char gender;
+	int age;
+	String name;
+	...set/get/ctor
+}
+
+class Photographer extends Person //isA
+{
+	Camera cam1 = new Camera();
+	Camera cam2 = new Camera();
+
+	//passing object as an argument knowsn as USES
+	Photo capture(Actor a) 
+	{
+		a.smile();
+		cam1.click();
+		Photo photo = new Photo();
+		return photo; //PRODUCES-A
+	}
+}
+
+class Actor extends Person
+{
+	void smile() { 
+
+	}
+	void dance()
+	{
+	}
+}
+
+
+					Person
+					|
+				-----------------
+				|isA		|isA		
+	Camera			Photographer	Actor		Photo
+	 - Lens			    Camera-hasA
+
+				capture()
+				{
+				}
