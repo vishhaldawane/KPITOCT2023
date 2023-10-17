@@ -891,14 +891,75 @@ SavingsAccount		CurrentAccount	CreditCardAccount
 
 
 
+abstract class
+		- it contains optional partial contract
 
+		- partial contract = function without body
 
+		- may  have regular functions
+
+		- it cannot be instantiated [ instance cannot be created ]
+	
+	
 
 interfaces in java
+		- it containts partial contract [ optional ]
+		- it cannot have regular functions [ except the default ones ]
+		- it cannot be instantiated
+		- multiple interfaces can be implemented by the child class
 
 
+
+	abstract class MusicalInstrument
+	{
+		abstract void playMusic();
+	}
 
 	
+
+
+
+				Smiling
+				| smile();
+				|
+				Magician
+				| smile(){ }
+				|
+		----------------------------------
+		|				|
+		| Flipping 			| Flipping
+		| | Rotating			| | Rotating
+		| |   |				| | |
+	   CardMagician			    HatMagician
+		smil(){}			smile(){} <-- optional overriding
+		rotate(){ } mandate		rotate(){} 
+		flip(){}			flip(){ }
+
+	
+1. exclusive function | doMagic() in Magician
+2. inherited function
+3. overridden+overriding 
+4. implemented function | from the interface
+
+
+class A {
+	void fun() { } //1.
+}
+class B extends A {
+	//2. 
+}
+------------------
+class C extends A {
+	void fun() { //3
+	}
+}
+--------------
+interface X { void fee(); }
+class D implements X {
+	void fee() { } //4
+}
+
+
 
 
 
