@@ -538,6 +538,69 @@ Cinematographer
 4. Inheritance
 
 
+		acquiring properties from existing business entities
+
+
+	TYPE OF INHERITANCE
+
+
+		DERIVATION		VS		IMPLEMENTATION
+		|					|
+	REGULAR SUPER CLASS			AN ABSTRACT CLASS/INTERFACE	
+	| extends				| extends/implements
+	A CHILD CLASS				A CHILD CLASS
+		
+	class SavingsAccount			abstract class BankAccount {
+	{						
+		void withdraw() { }		    abstract void withdraw();
+	}					 }
+	class FixedAccount extends SavingsAccount	class SavingsAccount extends BankAccount {
+	{							void withdraw() { //MANDATORY
+		void withdraw() { } //not mandatory		}
+	}						}
+
+
+
+	class A
+	{
+		void fun() { }
+	}
+	class B extends A
+	{
+		void fun() { } //not mandatory to override
+	}
+
+---------------------
+
+	abstract class A
+	{
+		abstract void fun(); 
+	}
+	class B extends A
+	{
+		void fun(){ } // is mandatory
+	}
+
+
+	interface A {
+		void fun();
+	}
+	interface B {
+		void foo();
+	}
+
+	abstract class C {
+		void fee();
+	}
+	class D extends C implements A,B
+	{
+		void fee() { }
+		void foo() { }
+		void fun() { }
+	}
+
+
+
 
 
 
@@ -820,6 +883,24 @@ ArrayIndexOutOfBoundsException	StringIndexOutOfBoundsException
 	-------------------------------------------
 	|		|			|
 SavingsAccount		CurrentAccount	CreditCardAccount
+
+
+
+
+
+
+
+
+
+
+
+interfaces in java
+
+
+
+	
+
+
 
 
 
