@@ -14,9 +14,15 @@ public class CustomExceptionTest {
         }
         catch(BrakesFailedException ex3) {
             System.out.println("Some brake problem during the drive : "+ex3); // + sign will print the actual exception classname and the error msg
-        } catch (CarKeyNotFoundException ex4) {
-            System.out.println("At the home :  "+ex4); // + sign will print the actual exception classname and the error msg
+        }
+        catch(SpeedLimitExceededException ex6) {
+            System.out.println("On the highway :  "+ex6); // + sign will print the actual exception classname and the error msg
+        } 
+        catch (CarKeyNotFoundException ex4) {
+            System.out.println("At the home1 :  "+ex4); // + sign will print the actual exception classname and the error msg
 
+        } catch (CarDocumentException ex5) {
+            System.out.println("At the home2 :  "+ex5); // + sign will print the actual exception classname and the error msg
         }
 
         System.out.println("end of main");

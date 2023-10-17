@@ -40,24 +40,29 @@ class Car
 {
     boolean keyFound; //false
 
-    Car() throws CarKeyNotFoundException
+    Car() throws CarKeyNotFoundException, CarDocumentException
     {
         double val = Math.random()%10;
-        if(val>0.90) {
-            keyFound = true; 
-            System.out.println("Wow!!! Key found");
-        }
-        else {
+      //  System.out.println("val "+val);
+
+        if(val>0.80) {
             throw new CarKeyNotFoundException("Oh No!!where is the car key????");
         }
+        
+        if(val<0.20) {
+            throw new CarDocumentException("Oh No!!where are the car documents???");
+        }
+        System.out.println("Car Key Found");
+        System.out.println("Car Documents Found");
     }
 
-    void longDrive() {
+    void longDrive() //no throws here
+    {
         for (int i = 1; i <= 50; i++) {
 
             double val = Math.random()%10; // 0 to 1
 
-            if(val>0.99) {
+            if(val>0.90) {
                // throw new RuntimeException("Oh!!! the tyre is punctured....can't go now..");
                 throw new TyrePuncturedException("Oh!!! the tyre is punctured....can't go now..");
             }
@@ -73,6 +78,13 @@ class Car
                 throw new FuelRanOutException("Oh!!! fuel ran out....can't go now..");
 
             }
+
+            if(val<0.20) {
+//                throw new RuntimeException("Oh!!! fuel ran out....can't go now..");
+                throw new SpeedLimitExceededException("Oh!!! Speed is exceeded its limit...challan is raised by the speed cameras....");
+
+            }
+
 
             System.out.println("driving my car "+i);
         }
@@ -103,11 +115,23 @@ class BrakesFailedException extends RuntimeException //unchecked
         super(msg);
     }
 }
+
+class SpeedLimitExceededException extends RuntimeException //unchecked
+{
+    SpeedLimitExceededException(String msg) {
+        super(msg);
+    }
+}
 class CarKeyNotFoundException extends Exception //checked
 {
     CarKeyNotFoundException(String msg) {
         super(msg);
     }
 }
-
+class CarDocumentException extends Exception //checked
+{
+    CarDocumentException(String msg) {
+        super(msg);
+    }
+}
 
