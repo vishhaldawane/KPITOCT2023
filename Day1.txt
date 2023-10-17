@@ -626,8 +626,85 @@ Packages
 		Lion	Fish	Sparrow
 		Bear		Monkey
 
+-----------------------------------
+all below are in jungle.cave
+class Tiger
+{
+    d
+    p
+    pro
+    pub
+}
+class Lion
+{
+	void roar()
+	{
+		Tiger t = new Tiger();
+		sop(t.d);//possible
+		sop(t.p); // noway
+		sop(t.pro);//possible
+		sop(t.pub);//possible
+	}
+}
 
 
+class Bear 
+{
+	void roar()
+	{
+		Tiger t = new Tiger();
+		sop(t.d);//possible
+		sop(t.p); // noway
+		sop(t.pro);//possible
+		sop(t.pub);//possible
+	}
+}
+
+class WhiteTiger extends Tiger 
+{
+	void roar()
+	{
+		sop(d);//possible
+		sop(p); // noway
+		sop(pro);//possible
+		sop(pub);//possible
+	}
+}
+---------------------
+
+jungle.river
+
+class Frog
+{
+	void jump()
+	{
+		Tiger t = new Tiger();
+		sop(t.d);//not-possible
+		sop(t.p); // no chance
+		sop(t.pro);//not-possible
+		sop(t.pub);//possible
+	}
+}
+
+class BengalTiger extends Tiger 
+{
+	void roar()
+	{
+		sop(d);//not-possible
+		sop(p); // no chance
+		sop(pro);//possible
+		sop(pub);//possible
+	}
+	void jump()
+	{
+		Tiger t = new Tiger();
+		sop(t.d);//not-possible
+		sop(t.p); // no chance
+		sop(t.pro);//not-possible
+		sop(t.pub);//possible
+	}
+}
+----------------
 
 				bank
 				|
@@ -662,7 +739,87 @@ Packages
 
 
 
+---------------------------------------------------------------
 
+Exception handling
+------------------
+
+
+	exception = runtime error
+
+			when the program is running 
+			it is raising an error to terminate
+			the program
+
+	
+			erorrs
+			|
+	----------------------------------------------------
+	|	 |	   |		|		|
+	compile  runtime  linker 	fatal		logical
+	|	 |	   |		 |		|
+	syntax  exception missing	out of		4+4=16
+			  libraries	memory		
+
+
+
+			left brain	vs	right brain
+			|			|
+			male			female
+
+	
+		
+
+		checked		vs		unchecked
+		|				|
+	fuel capacity				speed limit
+	tyre pressure				lane drive
+	health of the tyre			speed breakers
+	battery status				traffic status
+	coolant					road clearance status 
+	brake oil				punctured tyre 
+	brake pads				engine failed
+	documents-4				accident
+		rc book				airbags didnt work
+		DL				some health issue 
+		IP				
+		PUC
+	fasttag ETC recharge
+	engine oil
+	
+checked by the compiler
+unchecked by the compiler = ignored by the compiler = no mandate for try/catch
+
+				Object
+				 |
+				Throwable
+				 |
+		---------------------------------------
+		|				|
+		Error			Exception
+					 | checked [ except runtimeexception ]
+				------------------------
+				|			|
+			RuntimeException	IOException   SQLException
+			|- unchecke			|
+		-------------------------	FileNotFoundException	
+		|	    |	|
+	ArithmeticException |	NullPointerException
+			    |
+		IndexOutOfBoundsException
+			|
+	------------------------------------
+	|				|
+ArrayIndexOutOfBoundsException	StringIndexOutOfBoundsException
+
+
+
+
+			BankAccount
+			|
+	-------------------------------------------
+	|		|			|
+SavingsAccount		CurrentAccount	CreditCardAccount
 
 
 
