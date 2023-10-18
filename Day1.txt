@@ -959,6 +959,119 @@ class D implements X {
 	void fee() { } //4
 }
 
+interface A
+{
+	void fun();
+}
+interface B extends A
+{
+	void fee();
+}
+
+class C { }
+
+class D extends C implements B
+{
+
+}
+class E implements B
+{
+
+}
+
+		A
+		|extends
+	C	B
+extends	|	|implements
+	---------
+	|
+	D
+
+
+	
+--------------------------------------------------
+
+framework = semi-developed application
+
+photoframe shopkeeper
+----------------
+1. various frames [ shapes and designs ]
+2. of various sizes [ 10 02 30 40 inches
+3. of varous materials [ plastic, wood, glass,  
+4. glass [ non reflective or reflective ] 
+5. quality
+6. charge
+7. time
+8. skilled professionals
+
+
+Collection = a bag
+
+
+i			     Iterable <--Reactive
+				| Iterator iterator()
+				| 3
+				|
+i			   Collection
+				| add(Object o);
+				| 5
+			------------------
+			|duplicates	|unique
+i			List		Set
+			|10		|12
+		-------------	------------------
+		|	    |	|		|
+c	ArrayList    LinkedList TreeSet	    HashSet
+	18		18	20		20
+	+		+	+		+	
+	5		3	2		4
+	--		--	--		--
+	23		21	22		24
+	|		|	
+growable at	can grow at
+at the end	any location
+efficiently
+like a 
+Queue
+
+
+
+java.util
+jdk 1.8 docs
+
+
+do you have a free will?
+
+				x
+				CONTENT
+				|	ButterMilk
+				|	PaneerChilly
+				|	Noodles
+				|	FriedRice
+				|
+	y-------------------------------------------z
+	CONTAINER		|		ALGORITHM
+	|			|			|
+	Glass			|			drink()
+	Plate			|			eat();
+	Plate			|			eat();
+	Plate			i			eat();
+				ITERATOR
+				  |
+				Straw
+				Fork
+				ChopStiks
+				Spoon
+
+
+
+
+
+
+
+
+
+
 
 
 
