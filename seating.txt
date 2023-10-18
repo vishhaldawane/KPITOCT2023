@@ -9,3 +9,26 @@ Ruchitha Priyanka	Isha        Jidnyesha	 Rija	   Urvashi Hrushant Abhijeet
 	|			|			|		 |
 	Col1			Col2			Col3		Col4						
 
+
+import java.util.*;
+public class ArrayListTest1
+{
+	public static void main(String args[])
+	{
+		ArrayList numList = new ArrayList();
+		numList.add(10);
+		numList.add(20);
+		numList.add(30);
+		numList.add(40);
+		numList.add(50);
+		numList.add(60);
+		Iterator numIter = numList.iterator();
+
+		while(numIter.hasNext()) {
+			Integer value = (Integer)	numIter.next();
+			System.out.println(value);
+		}
+	}
+}
+
+

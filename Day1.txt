@@ -1048,7 +1048,8 @@ do you have a free will?
 				|	PaneerChilly
 				|	Noodles
 				|	FriedRice
-				|
+				|	CoconutWater
+				|	Water
 	y-------------------------------------------z
 	CONTAINER		|		ALGORITHM
 	|			|			|
@@ -1056,8 +1057,8 @@ do you have a free will?
 	Plate			|			eat();
 	Plate			|			eat();
 	Plate			i			eat();
-				ITERATOR
-				  |
+	Coconut			ITERATOR
+	WaterBottle		|
 				Straw
 				Fork
 				ChopStiks
