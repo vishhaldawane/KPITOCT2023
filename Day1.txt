@@ -1064,6 +1064,62 @@ do you have a free will?
 				ChopStiks
 				Spoon
 
+----------------------------------------------------------
+JDBC
+----
+
+
+	Java Database Connectivity
+
+
+
+***following diagram is not of inheritance
+
+	Java						Database
+	|						|
+	your java program	 Driver	<-i		MySQL
+				  |
+				  |
+				DriverManager<-c
+				  |
+			     Connection <-i
+				  |
+		------------------------------------
+		|		|		|
+	Statement<-i	PreparedStatement<-i	CallableStatement<-i
+	|			|			|
+	Select		insert/update/delete	procedure/function
+
+
+
+	Steps to JDBC
+
+	1. know your database - MySQL
+	2. know your driver - com.mysql.jdbc.Driver
+
+	3. connect to the database
+		3a) load the driver
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+		3b) acquire the connection
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","root123");
+
+	4. make a desired statement [ Statement/PreparedStatement/CallableStatement]
+			Statement statement = conn.createStatement();
+			
+	5. fire the statement
+			ResultSet result  =	statement.executeQuery("SELECT * FROM MYDEPT");
+ 
+	6. acquire the result if any
+	7. process the result if any
+			while(result.next()) {
+			}
+	8. close the result if any
+	9. close the statement
+	10. close the connection
+
+
+
+
 
 
 
