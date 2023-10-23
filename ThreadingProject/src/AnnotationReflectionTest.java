@@ -22,11 +22,28 @@ public class AnnotationReflectionTest
             }
             System.out.println("-----");
         }
-
+//1940 1970 2001
         System.out.println("============");
         Method methods[] = theMirror.getMethods();
         for (Method theMethod : methods) {
             System.out.println("Method:"+theMethod.getName());
+
+            Annotation methodAnnos [] = theMethod.getAnnotations();
+            for (Annotation theAnnotation : methodAnnos) {
+                //System.out.println("Annotation is : "+theAnnotation);
+                if(theAnnotation instanceof DeviceUsed) {
+                    DeviceUsed deviceUsed = (DeviceUsed) theAnnotation;
+                    System.out.println("Device Name : "+deviceUsed.deviceName());
+                    if(deviceUsed.deviceName().equalsIgnoreCase("plough")) {
+                        System.out.println("Plough is used in the farm");
+                    }
+                    else {
+                        System.out.println("Something unusual used in the farm....");
+                    }
+                }
+                System.out.println("--------------------");
+            }
+
         }
         System.out.println("-------------");
 
@@ -53,10 +70,9 @@ public class AnnotationReflectionTest
 }
 //Annotation
 
-@DevelopedBy(name="Vishhal")
+@DevelopedBy(name="Vishhal") 
 class GrandFather {  //developed by the developer Sakshi Mohite
 
-    //@...
     int age;
 
     //@...
@@ -72,7 +88,7 @@ class GrandFather {  //developed by the developer Sakshi Mohite
         System.out.println("GrandFather Ctor with "+i );
     }
 
-    //@....
+    @DeviceUsed(deviceName = "plough")
     public void farming() {
         System.out.println("GrandFather is farming...using the plough");
     }
@@ -84,6 +100,8 @@ class GrandFather {  //developed by the developer Sakshi Mohite
 class Father extends GrandFather {
 
   @Override
+      @DeviceUsed(deviceName = "tractor")
+
   void farming() {
     System.out.println("father is farming using the tractor...");
   }
@@ -98,6 +116,8 @@ class Father extends GrandFather {
 class Child extends Father  {
 
     @Override
+        @DeviceUsed(deviceName = "robots")
+
     void farming() {
         System.out.println("Child is farmiiing in using the robotic tractor...");
     }
@@ -125,7 +145,7 @@ em.save(savObj1);
 */
 
 
-
+/* 
 @Table("name="sav") //extra info
 class SavingsAccount
 {
@@ -136,3 +156,5 @@ class SavingsAccount
 
 
 }
+
+*/
