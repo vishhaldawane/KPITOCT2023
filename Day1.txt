@@ -1146,7 +1146,183 @@ Annotation
 	- limited to source code			can be avalied at runtime too
 
 
+----------------------------------------------------
 
+Hibernante and JPA
+
+	Java Persistence API
+		|
+	storing java object on the database a row (record)
+
+
+	classes are not tables
+	tables  are not classes
+
+
+class Account{
+   acno
+   name
+   bal
+}
+class Savings extends Account{
+   rate
+}
+class Current extends Account{
+   overdraft;
+}
+class Fixed extends Savings{
+   maturityDate;
+   maturityAmount
+}
+--------
+
+Account a = new Account(101,"jack",10000);
+Savings s = new Savings(102,"Jane",45000,4.7f);
+Current c = new Current(103,"Peter",56000,0.25);
+Fixed   f = new Fixed(104,"Smith",75000,10.5f,2028,125000);
+
+	account_tbl
+	---------------
+	(pk)
+	acno	name	bal
+	101	jack	10000
+	102     jane    45000
+	103	peter	56000
+	104	smith	75000
+
+	savings_tbl
+	------------
+	(fk)
+	acno  rate
+	102   4.7
+
+	current_tbl
+	------------
+	acno	overdraft
+	103	0.25
+
+	fixed_tbl
+	-----------
+	acno	rate	maturityDate maturityAmount
+	104	10.5	2028	     125000
+
+
+
+	java object mapped with database 
+
+		Object Relation Mapping [ ORM ]
+
+	Hibernate is ORM Framework
+
+	JPA is an implementation of this f/w
+
+
+JDBC - BMP
+------
+   1. load the driver
+   2. connect
+   3. statement
+   4. fire the query, grab the result
+   5. process the result
+   6. close db resources
+
+ORM - CMP
+-------------
+   1. configure the xml file 
+	META-INF/persistence.xml
+	( settings for loading the driver )
+	 drivername, url, username, password
+
+   2. specify the POJO [ plain old java object ]
+
+	@Entity
+	@Table(name="account_tbl")
+	class Account
+	{
+	   @Id
+           @Column(name="acno")
+	   int accountNumber;
+
+	   @Column(name="acname");
+	   String accountHolderName;
+
+	   @Column(name="acbal");
+           float accountBalance
+	}
+
+    3. load the JPA framework libraries 
+
+	EntityManagerFactory factory = 	Persistence.createEntityManagerFactory();
+	
+	EntityManager em = factory.createEntityManager();
+
+	EntityTransaction trans = em.begin();
+		Account acc = new Account(101,"Jack",5000);
+		em.save(acc); //insert query is built up on its own and fired too
+	trans.commit();
+
+--------------------------------
+	Account acc = 	em.find(Account.class,101); //SELECT 
+
+
+	merge() ; UPDATE
+
+	delete(); REMOVE
+
+------------------------------------------------------
+
+
+	maven project
+
+	Project Management Tool
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4th generation time table
+--------------------------
+
+
+space time situation
+==============================================================
+		urgent		||		not-urgent
+				||
+==============================================================
+		study		||	
+important			||
+				||
+--------------------------------------------------------------
+				||
+				||	fb/yt/reels for tp
+not-important			||	study
+				||
+--------------------------------------------------------------
 
 
 
