@@ -1,6 +1,6 @@
 public class App3 {
     public static void main(String[] args) {
-
+        
         SedanCar sedanCar1 = new SedanCar("BMW"); //Chalk chalk = new Chalk();
         SedanCar sedanCar2 = new SedanCar("MERC"); //Chalk chalk = new Chalk();
         SedanCar sedanCar3 = new SedanCar("SKODA"); //Chalk chalk = new Chalk();

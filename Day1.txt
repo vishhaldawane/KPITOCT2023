@@ -1119,6 +1119,51 @@ JDBC
 
 
 
+-----------------------
+
+Annotation
+-----------
+
+
+	- it an extra information of the class,field,method,ctor,arugments,return values
+
+
+	- it an extended version of comments
+
+	-it can be availed in the source file or class file too
+
+	- comments are limited only to the source code, but annotation can be
+	 availed at the runtime environment
+
+
+	comments			vs		annotations
+	|
+	-not standard way				standardized
+	-can be written anywhere			classlevel, method level
+							field leve, ctor level
+							arg level, return type level
+
+	- limited to source code			can be avalied at runtime too
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
