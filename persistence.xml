@@ -9,28 +9,18 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
+        
     <properties>
-      							<!--  this line only for hsqldb -->
-      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
       <property name="hibernate.show_sql" value="true" />
       <property name="hibernate.hbm2ddl.auto" value="update" />
       
-       <!-- JDBC Database connection settings 
-       org.hsqldb.jdbc.JDBCDriver
-       jdbc:hsqldb:hsql://localhost/mydb
-       -->
-       
-        <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
-        <property name="javax.persistence.jdbc.user" value="SA"/>
-        <property name="javax.persistence.jdbc.password" value=""/>
-       
-       <!-- 
-         <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@DESKTOP-EPTT35F:1521:XE"/>
-        <property name="javax.persistence.jdbc.user" value="scott"/>
-        <property name="javax.persistence.jdbc.password" value="tiger"/>
-        -->
+      
+
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mysql"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value="root123"/>
         
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size" value="1" />
