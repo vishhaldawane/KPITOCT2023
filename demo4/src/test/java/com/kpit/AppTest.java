@@ -14,11 +14,11 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void compareNumberTest()
     {
-        assertTrue( true );
-        double j = random()%100;
-        int m = min(10, 2);
-
+        System.out.println("hello test...");
+        assertTrue( 100 > 50 );
+        System.out.println("test over");
+        
     }
 }
