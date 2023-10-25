@@ -1,0 +1,35 @@
+
+
+C:> set JAVA_HOME=c:\program files\java\jdk11
+c:\> code
+
+1. ctrl  shift p -> create java project
+
+2. select maven project
+3. archetype : popular -> quick start
+4. 1.4
+5. com.kpit <-- groupid
+6. artifact -> demo5 / whatever name for your project (smallcase)
+7. select source folder for demo5 to host
+8. it will prepare the project : 
+	press Enter for the snapshop
+	press Y
+9. open that demo5 folder 
+------------------------
+
+now demo5 is open with pom.xml file
+
+9.a in demo5's pom.xml select
+	<properties>
+		jdk version 1.7 to 11
+
+10. open git to copy pom.xml's dependencies for : mysql,hibernate core
+		jpa and junit
+	and paste them in the dependencies tag of your pom.xml
+
+11. copy the <resources> from the <build> of git's pom.xml
+	to your pom.xml's build
+
+12. if a popup to update the project comes : select ALWAYS 
+
+

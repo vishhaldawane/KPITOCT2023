@@ -1276,20 +1276,69 @@ ORM - CMP
 
 	Project Management Tool
 
+
+
+				demo2
+				|
+		--------------------------------
+		|			|
+		src			pom.xml
+		|			project dependencies
+	--------------------			eg. junit, mysql driver
+	|		   |			jpa, spring, springboot etc
+	main		 test			spring security, ....
+	|	  	    |			...
+------------		 -----------
+|	   |		 |
+java  resources		java
+|	    |		 |
+com.kpit  META-INF	com.kpit
+|	     |		  |
+App.java persistence.xml  AppTest.java
+
 	
 
 
+1. src/main/java
+2. src/main/resourcs/META-INF/persistence.xml <- here your db settings done
+3. src/test/java
 
 
+	html	css	js		xml
+	|	|	|		|
+	view	syle	validation	transport data
 
+	abc.html
+	--------
+	<h1> hello </h1>
 
+	abc.css
+	--------
+	h1 { color:pink }
 
+	abc.js
+	-------
+	function validate() {
+		some code
+		to deal with h1	
+	}
 
-
-
-
-
-
+	abc.xml
+	--------
+	<?xml>
+	<letter>
+		<salutation>
+			Hello Sir
+		</salutation>
+		<content>
+			how are you
+		</content>
+		<closing>
+			regards
+			Jack
+		</closing>
+	</letter>
+	
 
 
 
