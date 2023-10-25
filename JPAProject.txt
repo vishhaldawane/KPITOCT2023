@@ -33,3 +33,36 @@ now demo5 is open with pom.xml file
 12. if a popup to update the project comes : select ALWAYS 
 
 
+13. create a folder in the src -> resources
+
+14. select resources -> create folder META-INF
+
+15. select META-INF -> create file persistence.xml [ check the spelling ]
+
+16. after copying persistence.xml | refractor the username and password
+	and database name
+
+17. Open AppTest.java
+		and refractor the import lines
+		with
+		import static org.junit.jupiter.api.Assertions.assertTrue;
+		import org.junit.jupiter.api.Test;
+
+18. Try running the App.java
+
+
+19. create class known as Flight.java
+	in com.kpit package
+
+20. add private fields with @Entity for the class
+	@Table for thetable name
+
+	add fields
+	add @Id for a primary key
+	add @Column(name="", length) for String types
+
+21. add a new class known as CrudOperation.java
+
+	Persistence.createEntityManagerFactory("MyJPA"); //see persistence.xml 			for the accurate unit name and its spelling
+
+	
