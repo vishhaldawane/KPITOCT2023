@@ -12,16 +12,17 @@ public class App3 {
         System.out.println("=> Context is created.."+context);
 
         System.out.println("1 asking context to get a bean via getBean() ");
-        Rose rose =  (Rose) context.getBean("myRose");
+        Rose rose =  (Rose) context.getBean("myRose1");
         rose.flowering();
         System.out.println("-------");
+
         System.out.println("2 asking context to get a bean via getBean() ");
-        Rose rose2 =  (Rose) context.getBean("myRose");
+        Rose rose2 =  (Rose) context.getBean("myRose2");
         rose2.flowering();
 
         System.out.println("-------");
         System.out.println("3 asking context to get a bean via getBean() ");
-        Rose rose3 =  (Rose) context.getBean("myRose");
+        Rose rose3 =  (Rose) context.getBean("myRose3");
         rose3.flowering();
     }
 }

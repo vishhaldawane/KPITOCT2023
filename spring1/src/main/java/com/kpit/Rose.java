@@ -1,10 +1,17 @@
 package com.kpit;
 
 public class Rose {
+    String color;
+
+    public Rose(String color) {
+        this.color=color;
+        System.out.println(color+" color Rose(String) is created..."+this);
+    }
+
     public Rose() {
-        System.out.println("Rose is created..."+this);
+        System.out.println(color+" color Rose() is created..."+this);
     }
     void flowering() {
-        System.out.println("Rose is flowering...."+this);
+        System.out.println(color+" color rose is flowering...."+this);
     }
 }

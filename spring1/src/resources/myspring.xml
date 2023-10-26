@@ -8,7 +8,16 @@
        xmlns:context="http://www.springframework.org/schema/context">   
   
 
-  <bean id="myRose" class="com.kpit.Rose" scope="singleton">
+  <bean id="myRose1" class="com.kpit.Rose" scope="prototype">
+    <constructor-arg index="0" value="Red"/>
+  </bean> 
+
+  <bean id="myRose2" class="com.kpit.Rose" scope="prototype">
+    <constructor-arg index="0" value="Yellow"/>
+  </bean> 
+
+  <bean id="myRose3" class="com.kpit.Rose" scope="prototype">
+    <constructor-arg index="0" value="White"/>
   </bean> 
 
 	
