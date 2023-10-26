@@ -1,6 +1,6 @@
 package com.kpit;
 
-public class Rose {
+public class Rose implements Flower {
     String color;
 
     public Rose(String color) {
@@ -11,7 +11,7 @@ public class Rose {
     public Rose() {
         System.out.println(color+" color Rose() is created..."+this);
     }
-    void flowering() {
+    public void flowering() {
         System.out.println(color+" color rose is flowering...."+this);
     }
 }

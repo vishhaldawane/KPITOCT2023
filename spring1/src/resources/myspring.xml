@@ -8,17 +8,35 @@
        xmlns:context="http://www.springframework.org/schema/context">   
   
 
-  <bean id="myRose1" class="com.kpit.Rose" scope="prototype">
+  <bean id="myRose" class="com.kpit.Rose" scope="prototype">
     <constructor-arg index="0" value="Red"/>
   </bean> 
 
-  <bean id="myRose2" class="com.kpit.Rose" scope="prototype">
-    <constructor-arg index="0" value="Yellow"/>
-  </bean> 
-
-  <bean id="myRose3" class="com.kpit.Rose" scope="prototype">
+  <bean id="myLotus" class="com.kpit.Lotus" scope="prototype">
     <constructor-arg index="0" value="White"/>
   </bean> 
 
+
+  <bean id="myLily" class="com.kpit.Lily" scope="prototype">
+    <constructor-arg index="0" value="Yellow"/>
+  </bean> 
+
+  <bean id="myPiston" class="com.kpit.Piston">
+    <constructor-arg index="0" value="FourStroke"/>
+  </bean>
+
+  <bean id="myEngine" class="com.kpit.Engine">
+    <constructor-arg index="0" value="8 Cylinder"/>
+    <constructor-arg index="1" ref="myPiston" />
+  </bean>
+  
+  <bean id="myCar" class="com.kpit.Car">
+    <constructor-arg index="0" value="Maruti Suzuki"/>
+    <constructor-arg index="1" value="Baleno"/>
+    <constructor-arg index="2" ref="myEngine"/>
+  </bean>
+
+ 
+  
 	
 </beans>
