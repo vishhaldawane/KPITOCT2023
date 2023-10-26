@@ -15,10 +15,10 @@ public class App
         Engine theEngine2 = new Engine("18 Cylinder",thePiston2);
         
         System.out.println("----------------");
-        Car car1 = new Car("Skoda",theEngine1);
+        Car car1 = new Car("BMW","X1",theEngine1);
         System.out.println("----------------");
 
-        Car car2 = new Car("Merc",theEngine2);
+        Car car2 = new Car("Maruti Suzuki","Baleno",theEngine2);
         System.out.println("----------------");
 
         car1.drive();
@@ -58,11 +58,13 @@ class Car
 {
     String carModel;
     Engine engine;
+    String carCompany;
 
-    Car(String model, Engine engine) {
+    Car(String carCompany, String model, Engine engine) {
+        this.carCompany = carCompany;
         this.carModel = model;
         this.engine = engine;
-        System.out.println(carModel+" Car created..."+this);
+        System.out.println(carCompany+" company's "+carModel+" Car created..."+this);
     }
     void drive() {
         engine.ignite();

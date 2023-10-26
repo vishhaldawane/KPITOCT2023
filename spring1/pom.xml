@@ -14,20 +14,58 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
+     <dependency>   <!-- 1 -->
+  		<groupId>org.springframework</groupId> <!-- goes to this website -->
+  		<artifactId>spring-context</artifactId> <!-- and downloads teh jar file named as "spring-context.5.1.13.RELEASE.jar" -->
+  		<version>5.1.13.RELEASE</version>								    <!--       artifact    version -->
+  	</dependency>	
+
+
+<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.20</version>
+</dependency>
+
+
+ <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.4.16.Final</version>
+		</dependency>
+
+		  <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+		<dependency>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+		    <artifactId>hibernate-jpa-2.1-api</artifactId>
+		    <version>1.0.2.Final</version>
+		</dependency>
+		
+		<dependency>
+	        <groupId>org.junit.jupiter</groupId>
+	        <artifactId>junit-jupiter-engine</artifactId>
+	        <version>5.9.1</version>
+	        <scope>test</scope>
+    	</dependency>
+    
   </dependencies>
 
   <build>
+
+       <resources>
+      <resource>
+        <directory>src/resources</directory>
+      </resource>
+    </resources>
+    
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->

@@ -1341,19 +1341,6 @@ App.java persistence.xml  AppTest.java
 	
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 4th generation time table
 --------------------------
 
@@ -1372,6 +1359,110 @@ important			||
 not-important			||	study
 				||
 --------------------------------------------------------------
+
+
+
+
+
+	Your Body - physical plane	- 	Yoga Gym Diet .....
+	Your Mind - mental plane	-	Good thoughts, feelings, readings
+	Your Prana - life plane		- 	meditation
+	Your Science - intellegence	-	awareness
+	Your Bliss - Ananda		-	Ananda
+
+
+
+	sac within a sac within a sac withing a sac within a sac
+	1	     2		  3		4	    5
+
+
+
+
+
+
+	Spring = semi developed application framework
+		 for dependency injections / IOC
+
+
+	DI/ IoC = inversion of control
+
+	
+	class Rose
+	{
+	}
+	
+	Rose rose = Garden.getRose();
+
+	class Garden
+	{
+		static Rose getRose()
+		{
+			Rose rose = new Rose();
+			return rose;
+		}
+	}
+
+------------------
+
+
+scope="singleton" is the default strategy of spring container
+
+
+scope="prototype" every type a unique bean is created
+
+is transaction management required in insert query for JPA
+YES
+
+for entityManager.find() <-- no entity transaction required
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
