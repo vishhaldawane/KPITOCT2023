@@ -27,9 +27,9 @@ class CarFactory
 {
 
     Car getCar(String cc, String x, String y, String z) {
-        Piston thePiston = new Piston(x);
+    /*     Piston thePiston = new Piston(x);
         Engine theEngine = new Engine(y,thePiston);
-        Car theCar = new Car(cc,z,theEngine);
-        return theCar;
+        Car theCar = new Car(cc,z,theEngine);*/
+        return null;
     }
 }

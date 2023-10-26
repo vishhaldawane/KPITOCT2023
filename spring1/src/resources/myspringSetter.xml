@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd"
+       xmlns:context="http://www.springframework.org/schema/context">   
+  
+
+ <bean id="myPiston" class="com.kpit.Piston">
+    <property name="type" value="FourStroke"/>
+  </bean>
+
+  <bean id="myEngine" class="com.kpit.Engine">
+      <property name="engineModel" value="8 Cylinder"/>
+      <property name="piston" ref="myPiston"/>
+  
+  </bean>
+  
+  <bean id="myCar" class="com.kpit.Car">
+    <property name="carModel" value="Maruti Suzuki"/>
+    <property name="carCompany"  value="Baleno"/>
+    <property name="engine"  ref="myEngine"/>
+  </bean>
+
+</beans>
