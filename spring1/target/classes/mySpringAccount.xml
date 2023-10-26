@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd"
+       xmlns:context="http://www.springframework.org/schema/context">   
+  
+
+ <bean id="myAcc" class="com.kpit.Account">
+    <property name="accountNumber" value="123"/>
+    <property name="accountHolder" value="Ekta"/>
+    <property name="accountBalance" value="50000"/>
+    
+  </bean>
+
+  
+
+</beans>
