@@ -20,6 +20,12 @@
 
   <dependencies>
 
+	   <dependency>   <!-- 1 -->
+  		<groupId>org.springframework</groupId> <!-- goes to this website -->
+  		<artifactId>spring-context</artifactId> <!-- and downloads teh jar file named as "spring-context.5.1.13.RELEASE.jar" -->
+  		<version>5.1.13.RELEASE</version>								    <!--       artifact    version -->
+  	</dependency>	
+
 
 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 
