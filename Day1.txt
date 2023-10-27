@@ -1419,6 +1419,29 @@ for entityManager.find() <-- no entity transaction required
 
 
 
+1. myspringSetter.xml
+	all <bean> tags with <property> tags
+
+2. App.java
+	all classes, eg., Car, Engine and Piston
+	with only no-arg constructor
+	and setter and getters
+	- u must not have any parameterized ctor
+	- keep only no-arg ctor
+
+
+
+1. Account class with 3 fields , setters and ctor, getters
+
+2. mySpringSetter.xml
+	make <bean> tag with <property> in it.
+	to set the values to the object of Account class
+
+3. AccountApp.java
+	with main
+		|
+		Application context = ....
+	
 
 
 

@@ -12,9 +12,9 @@ public class App4 {
         System.out.println("=> Context is created.."+context);
 
        
-        Car theCar = (Car) context.getBean("myCar");
+      //  Car theCar = (Car) context.getBean("myCar");
 
-        theCar.drive();
+       // theCar.drive();
 
         
 
