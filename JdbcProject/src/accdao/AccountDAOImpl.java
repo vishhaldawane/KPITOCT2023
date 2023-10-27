@@ -5,17 +5,23 @@ import java.util.List;
 
 public class AccountDAOImpl implements AccountDAO {
 
-    Connection conn;
-    
+    //Connection conn;
+    //EntityManager em;
+
     AccountDAOImpl() {
         //load the driver and make the global connection;
+       // EntityManagerFactory factory  = Persistence.createEntityManagerFactory("MyJPA");
+
+        //this.em = factory.createEntityManager();
     }
 
 
     @Override
     public void createAccount(Account account) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createAccount'");
+        //EntityTransaction trans = em.getTransaction();
+    // trans.begin();
+         //   em.persist(account);
+      //  trans.commit();
     }
 
     @Override
