@@ -25,6 +25,23 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
     @Override
     public void insertDepartment(Department department) {
+        try {
+            System.out.println("Creating a prepared statement");
+            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO MYDEPT3 VALUES (?,?,?)");
+            System.out.println("PreparedStatement created...");
+
+            preparedStatement.setInt(1, department.getDepartmentNumber());
+            preparedStatement.setString(2, department.getDepartmentName());
+            preparedStatement.setString(3, department.getDepartmentLocation());
+            
+            //5. fire the statement
+            System.out.println("Executing the query...");
+            int rowsAdded  = preparedStatement.executeUpdate();
+            System.out.println("Query fired..rows added..."+rowsAdded);
+        }
+         catch(SQLException e) {
+            System.out.println("DB problem : "+e);
+        }
     }
 
     @Override
@@ -93,10 +110,49 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
     @Override
     public void updateDepartment(Department department) {
+        try {
+            //4. make a desired statement [ Statement/PreparedStatement/CallableStatement]
+            System.out.println("Creating a prepared statement");
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE MYDEPT3 SET   DNAME=?,LOC=? WHERE DEPTNO=?");
+            System.out.println("PreparedStatement created...");
+
+            //set col1
+            preparedStatement.setString(1, department.getDepartmentName());
+            
+            //set col2
+            preparedStatement.setString(2, department.getDepartmentLocation());
+            
+            //from
+            preparedStatement.setInt(3, department.getDepartmentNumber());
+
+            //5. fire the statement
+            System.out.println("Executing the query...");
+            int rowsUpdated  = preparedStatement.executeUpdate();
+            System.out.println("Query fired..rows modified..."+rowsUpdated);
+        }
+        catch(SQLException e) {
+            System.out.println("Exception : "+e);
+        }  
     }
 
     @Override
     public void deleteDepartment(int deptNumber) {
+         //4. make a desired statement [ Statement/PreparedStatement/CallableStatement]
+        try {
+         System.out.println("Creating a prepared statement");
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM MYDEPT3 WHERE DEPTNO=?");
+            System.out.println("PreparedStatement created...");
+            
+            preparedStatement.setInt(1, deptNumber);
+
+            //5. fire the statement
+            System.out.println("Executing the query...");
+            int rowsDeleted = preparedStatement.executeUpdate();
+            System.out.println("Query fired..rows DELETED..."+rowsDeleted);
+        }
+        catch(SQLException e) {
+            System.out.println("Exception : "+e);
+        }    
     }
     
     
