@@ -5,12 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo11.layer2.Pizza;
+import com.example.demo11.layer4.PizzaAlreadyExistException;
+import com.example.demo11.layer4.PizzaNotFoundException;
 import com.example.demo11.layer4.PizzaService;
 
 @RestController
@@ -47,5 +53,42 @@ public class MyPizzaController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
+
+    @PostMapping("/addPizza")  
+    public ResponseEntity addANewPizza(@RequestBody Pizza pizzaToAdd) {
+        System.out.println("addANewPizza(Pizza) is Adding a new pizza...");
+        try {
+            pizzaService.createPizza(pizzaToAdd);
+            return ResponseEntity.status(HttpStatus.FOUND).body("Pizza successfully created...");
+        }
+        catch(PizzaAlreadyExistException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        }
+    }
+
+    @PutMapping("/modifyPizza")  
+    public ResponseEntity editExistingPizza(@RequestBody Pizza pizzaToModify) {
+        System.out.println("editExistingPizza(Pizza) is modifying a new pizza...");
+        try {
+            pizzaService.modifyPizza(pizzaToModify);
+            return ResponseEntity.status(HttpStatus.FOUND).body("Pizza successfully modified...");
+        }
+        catch(PizzaNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/deletePizza/{pid}")  
+    public ResponseEntity removeExistingPizza(@PathVariable("pid") int pizzaId) {
+        System.out.println("removeExistingPizza(int) is deleting an existing pizza...");
+        try {
+            pizzaService.deletePizza(pizzaId);
+            return ResponseEntity.status(HttpStatus.FOUND).body("Pizza successfully deleted...");
+        }
+        catch(PizzaNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
 
 }

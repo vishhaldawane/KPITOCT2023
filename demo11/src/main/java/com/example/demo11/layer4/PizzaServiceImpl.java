@@ -16,7 +16,8 @@ public class PizzaServiceImpl implements PizzaService {
     PizzaRepository pizzaRepository;
 
     @Override
-    public Pizza orderingAPizza(int id) { // a service function
+    public Pizza orderingAPizza(int id) 
+    { // a service function
         
         Pizza pizza = null;
 
@@ -29,7 +30,7 @@ public class PizzaServiceImpl implements PizzaService {
                 pizza = optionalPizza.get();
             }
             else {
-                throw new RuntimeException("Pizza not found with this id : "+id);
+                throw new PizzaNotFoundException("Pizza not found with this id : "+id);
             }
         }
         return pizza;
@@ -82,7 +83,7 @@ public class PizzaServiceImpl implements PizzaService {
             System.out.println("Pizza deleted...");
         }
         else {
-            throw new RuntimeException("Pizza not found ...");
+            throw new PizzaNotFoundException("Pizza not found ...");
         }
     }
 
