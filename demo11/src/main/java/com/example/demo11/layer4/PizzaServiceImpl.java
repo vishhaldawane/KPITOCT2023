@@ -47,11 +47,11 @@ public class PizzaServiceImpl implements PizzaService {
     }
 
     @Override
-    public void createPizza(Pizza pizza) {
+    public void createPizza(Pizza pizza) throws PizzaAlreadyExistException {
         
         Optional<Pizza> optionalPizza = pizzaRepository.findById(pizza.getPizzaNumber());
         if(optionalPizza.isPresent()) {
-            throw new RuntimeException("Pizza is alreay present...");
+            throw new PizzaAlreadyExistException("Pizza is alreay present...");
         }
         else {
             pizzaRepository.save(pizza);

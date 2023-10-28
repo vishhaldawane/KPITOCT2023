@@ -12,7 +12,7 @@ public interface PizzaService {
     Pizza orderingAPizza(int id);
 	List<Pizza> getAllPizzas();
 	
-	void createPizza(Pizza pizza);
+	void createPizza(Pizza pizza) throws PizzaAlreadyExistException;
 	Pizza modifyPizza(Pizza pizza);
 	void  deletePizza(int id);
 }

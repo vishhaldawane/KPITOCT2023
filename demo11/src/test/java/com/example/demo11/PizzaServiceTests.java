@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.demo11.layer2.Pizza;
 import com.example.demo11.layer3.PizzaRepository;
+import com.example.demo11.layer4.PizzaAlreadyExistException;
 import com.example.demo11.layer4.PizzaService;
 
 @SpringBootTest
@@ -39,7 +40,7 @@ public class PizzaServiceTests {
 	}
 
 	@Test
-	public void addANewPizzaTest() {
+	public void addANewPizzaTest() throws PizzaAlreadyExistException {
 		Pizza pizza = new Pizza();
 		pizza.setPizzaNumber(6);
 		pizza.setTypeOfPizza("Something new");
