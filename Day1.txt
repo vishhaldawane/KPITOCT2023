@@ -1445,86 +1445,69 @@ for entityManager.find() <-- no entity transaction required
 
 
 
+Annotation driven spring configuration
+---------------------------------------
+
+if u read ->lead
+reader -> leaders
+
+	lEarn - 
 
 
+@Component
+class Tiger
+{
+	fields
+	set/get
+}
 
+A class = bean = pojo(set/get+fields) = service = controller = dao
 
-
-
-
-
-
-
+		anything known as class/interface is known
+		as component
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+spring.xml
+-----------
+<beans>
+	<bean id="tgr" class="com.kpit.Tiger">
+		<constructor-arg
+			or
+		<property...>
+</beans>
+----------------
+
+springAnno.xml
+--------------
+<beans>
+	
+  		<context:component-scan base-package="com.kpit"/>
+
+</beans>
+
+
+
+DAO and Repository are the same thing
+ |		|
+core	repository
+java	|
+|	|
+Cook	Chef
+
+
+	DAO = Data Access Object
+-----------------------------------------
+
+			  ---
+			 /   \
+			  ~ ~
+	Table <---mapped -- POJO ---> POJI---------> POJIImpl
+	|		    |		 |		 |
+	|		    |		 |		 |
+	|		    |		 |		 |
+	mydept3		Department  DepartmentDAO  DepartmentDAOImpl
+
+Core	account_tbl --- Account { } ---> AccountDAO AccountDAOImpl
+Spring	account_tbll --- Account { } ---> AccountRepository -> AccountRepositoryImpl
+
+now its upto you, whether to use BMP or CMP
 
