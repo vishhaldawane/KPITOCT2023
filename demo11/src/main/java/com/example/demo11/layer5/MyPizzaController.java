@@ -3,6 +3,8 @@ package com.example.demo11.layer5;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,11 +35,17 @@ public class MyPizzaController {
         System.out.println("getAllPizzas() is retrieving all the pizzas...");
         return pizzaService.getAllPizzas();
     }
-    // localhost:8080/pizzahut/getPizza
+    // localhost:8080/pizzahut/getPizza/1
     @GetMapping("/getPizza/{pid}") //plural 
-    public Pizza getTheSinglePizza(@PathVariable("pid") int x) {
+    public ResponseEntity getTheSinglePizza(@PathVariable("pid") int x) {
         System.out.println("getTheSinglePizza(int) is retrieving a single pizza...");
-        return pizzaService.orderingAPizza(x);
+        try {
+            Pizza pizza = pizzaService.orderingAPizza(x);
+            return ResponseEntity.status(HttpStatus.FOUND).body(pizza);
+        }
+        catch(RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
 }
