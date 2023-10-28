@@ -13,7 +13,7 @@ import com.example.demo11.layer2.Pizza;
 import com.example.demo11.layer3.PizzaRepository;
 
 @SpringBootTest
-class Demo11ApplicationTests {
+class PizzaRepositoryTests {
 
 	@Autowired //spring's concern to bring the implementation object to below ref
 	PizzaRepository pizzaRepository;
