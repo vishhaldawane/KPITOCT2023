@@ -1,0 +1,132 @@
+
+
+AutoRickshawNotFoundException.java
+------
+class AutoRickshawNotFoundException extends RuntimeException {
+	AutoRickshawNotFoundException(String args) {		
+		super( args );
+	}
+}
+class PSDSessionException extends Exception {
+	PSDSessionException(String args) {
+		super(args);
+	}
+}
+class Student {
+	void journey() {
+		for(int i=1;i<=10;i++) {
+		 
+		 double val = Math.random()%10;
+		 if(val>0.50) {
+			throw new AutoRickshawNotFoundException("No auto here...");
+			
+		 }
+		 sop("journey done"+i);
+		}
+	}
+	void learningTechnical() throws PSDSessionException {
+		for(int i=1;i<=10;i++) {
+		 
+		 double val = Math.random()%10;
+		 if(val>0.50) {
+			throw new PSDSessionException("Wow, how wonderfull.....");
+			
+		 }
+		 sop("journey done"+i);
+		}
+	}
+}
+class Test {
+	p s v main() {
+		Student stu = new Student();
+		stu.journey();
+		try {
+			stu.learningTechnical();
+		}
+		catch(PSDSessionException e) {
+			sop(e);
+		}
+	}
+}
+
+------------
+
+class Novel {
+	int novelId;
+	String novelName;
+	String novelType;
+	String Author;
+	float price;
+	int nop;
+	right click -> generate toString, get/set
+			hashCode() + equals() -> and select all columns
+
+}
+class HashSetTest {
+	main() {
+		Novel n1 = new Novel(1,"The Alchemist","Inspiration","PC",450,300);
+		Novel n2 = new Novel(1,"The Alchemist","Inspiration","PC",450,300);
+		Novel n3 = new Novel(1,"The Alchemist","Inspiration","PC",450,300);
+		Novel n4 = new Novel(1,"The Alchemist","Inspiration","PC",450,300);
+
+		HashSet<Novel> allNovels = new HashSet<Novel>();
+		allNovels.add(n1);..n2..n3....
+	
+		Iterato...
+
+
+	}
+}
+----
+3 
+
+JDBC
+
+------
+4
+JPA
+	pom.xml -> entry for src/resources
+	|
+	dependencies -> hiberante, mysql, junit
+
+	src/resource   META-INF/persistence.xml
+
+	@Entity
+	@Table9name=("flight_tbl")
+	class Flight {
+		@Id int flightNumber;
+		@Column ...
+		set/get
+	}
+	class TestThem {
+
+		@Test
+		public void addFlight() {
+			Flight flightObj.....
+			EntityManagerFactory factory = Persistence.createEMF("MyJPA");
+			EntityManager em  = factory.createEntityManager();
+			EntityTransaction trans = em.getTransaction();
+			trans.begin() 
+				em.persist(flightObj);
+			trans.commit();
+		}
+
+	}
+
+------------
+5.
+
+	
+1. table
+2. pojo
+3. repo  CrudRepository's child interface - testthem  Junit
+4. service	- test it - Junit
+5. controller - test it via postman
+---------
+6. Angular
+
+
+
+
+
+
